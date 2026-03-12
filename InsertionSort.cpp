@@ -1,72 +1,65 @@
 #include <iostream>
 using namespace std;
 
-int arr[20];
-int n;
+int arr[20];        
+int n;              
 
-void input (){
+void input(){ 
     while (true){
-        cout << "Masukkan jumlah data pada array : ";
+        cout << "Masukan Jumlah Data Pada Array : ";
         cin >> n;
 
         if (n <= 20){
             break;
         }
         else{
-            cout << "\nArray tidak boleh lebih dari 20\n";
+            cout << "\nArray Tidak Boleh Lebih dari 20\n";
         }
     }
     cout << endl;
-    cout << "===============================================";
-    cout << "===========Masukkan element array==============";
-    cout << "===============================================" << endl;
+    cout << "================================";
+    cout << "=========Masukan Element Array=========";
+    cout << "================================";
 
-    for (int i = 0; i < n; i++)
-    {
-        cout << "Data ke-" << (i + 1) << ": ";
+    for (int i = 0; i < n; i++){
+        cout << "Data ke-" << (i + 1) << " : ";
         cin >> arr[i];
     }
 }
 
-void insertionsort(){
+void insertionsort(){ 
     int temp;
     int j;
 
-for (int i = 0; i < n; i++)
-{
-    temp = arr[1];
-    j = i-1;
-    while (j >= 0 && arr[j] > temp)
-    {
-        arr [j + 1] = arr[j];
-        j--;
+    for (int i = 0; i < n; i++){
+        temp = arr[i];
+        j = i - 1;
+        while (j >=0 && arr[j] > temp){ 
+            arr[j + 1] = arr [j];
+            j--;
+        }
+        arr[ j + 1 ] = temp;
+        cout << "\nStep" << i << ":";
+        for (int k = 0; k < n; k++){
+            cout << arr[k] << " ";
+        }
     }
-    arr[j + 1] = temp;
-    cout << "\nStep" << i << ": ";
-    for (int k = 0; k < n; k++)
-    {
-        cout << arr[k] << " ";
-    }
-}
 }
 
-void display()
-{
+void display(){
     cout << endl;
-    cout << "\n=============";
-    cout << "\nElement array" << endl;
-    cout << "\n=============" << endl;
+    cout << "--------------------------------" << endl;
+    cout << "Element Array" << endl;
+    cout << "--------------------------------" << endl;
 
-    for (int j = 0; j < n; j++)
-    {
+    for (int j = 0; j < n; j++){
         cout << arr[j] << endl;
     }
     cout << endl;
 }
 
-int main ()
-{
-    input ();
+int main(){
+    input();
     insertionsort();
     display();
     system("pause");
