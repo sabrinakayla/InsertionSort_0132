@@ -49,3 +49,17 @@ for (int i = 0; i < n; i++)
     }
 }
 }
+
+void display()
+{
+    cout << endl;
+    cout << "\n=============";
+    cout << "\nElement array" << endl;
+    cout << "\n=============" << endl;
+
+    for (int j = 0; j < n; j++)
+    {
+        cout << arr[j] << endl;
+    }
+    cout << endl;
+}
